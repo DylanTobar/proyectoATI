@@ -51,16 +51,14 @@
             </div>
 
             <mat-form-field appearance="fill">
-              <mat-label>Select me</mat-label>
+              <mat-label>ROL</mat-label>
               <mat-select formControlName="admin">
                 <mat-option value="1" >administrador</mat-option>
                 <mat-option value="2" >usuario</mat-option>
-                <mat-error *ngIf="addressForm.controls['admin'].hasError('required')">
-                  El Rol es <strong>requerido</strong>
-                </mat-error>
               </mat-select>
-              <mat-hint>Here's the dropdown arrow ^</mat-hint>
-
+              <mat-error *ngIf="addressForm.controls['admin'].hasError('required')">
+                El Rol es <strong>requerido</strong>
+              </mat-error>
             </mat-form-field>
 
           </mat-card-content>
