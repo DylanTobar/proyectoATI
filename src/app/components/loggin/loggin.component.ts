@@ -39,7 +39,7 @@ export class LogginComponent {
       (res) =>{
         localStorage.setItem('token', res.token);
         this.rol = this.getRol(res.token);
-        this._router.navigate(['principalAdmin']);
+        this._router.navigate(['principal']);
       }
     )
   }
