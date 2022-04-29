@@ -1,0 +1,42 @@
+<body class="body">
+  <div class="container">
+    <div class="row">
+    <form [formGroup]="addressForm" novalidate (ngSubmit)="onLogin()">
+      <mat-card class="mat_card">
+        <mat-card-content>
+          <h2>Log In</h2>
+          <p>Para acceder a las vistas de administrador debes de iniciar sesión</p>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="mat-form-field" appearance="fill">
+                <input type="text" [(ngModel)]="_usuario.userName" matInput placeholder="Correo"
+                  formControlName="userName" minlength="5" maxlength="25" required autofocus>
+                <mat-error *ngIf="addressForm.controls['userName'].hasError('required')">
+                  El Correo de Usuario es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="mat-form-field" appearance="fill">
+                <input type="password" [(ngModel)]="_usuario.password" matInput placeholder="Contraseña"
+                  formControlName="password" minlength="5" maxlength="25" required>
+                <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
+                  La Contraseña es <strong>requerida</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" [disabled]="addressForm.invalid" type="submit">Iniciar
+            Sesión</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+  </div>
+</body>
