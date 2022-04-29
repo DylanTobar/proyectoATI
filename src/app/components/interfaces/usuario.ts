@@ -1,5 +1,6 @@
-export interface Usuario {
+
+export interface User {
   rol:string;
-  userName:string;
+  email:string;
   password:string;
 }
