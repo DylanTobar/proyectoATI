@@ -22,7 +22,7 @@
             <div class="col">
               <mat-form-field class="mat-form-field" appearance="fill">
                 <input type="password" [(ngModel)]="_usuario.password" matInput placeholder="Contraseña"
-                  formControlName="password" minlength="5" maxlength="25" required>
+                  formControlName="password" minlength="4" maxlength="25" required>
                 <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
                   La Contraseña es <strong>requerida</strong>
                 </mat-error>
