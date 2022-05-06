@@ -1,0 +1,82 @@
+<body class="body">
+  <div class="container">
+    <div class="row">
+      <form [formGroup]="addressForm" novalidate (ngSubmit)="agregarProducto()">
+        <mat-card class="card">
+          <h1 class=" text-center" *ngIf="editing == false">Agregar Producto</h1>
+          <h1 class=" text-center" *ngIf="editing == true">Editar Producto</h1>
+
+          <h4 *ngIf="editing == true">Nombre</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloProducto.name" placeholder="Nombre" formControlName="name"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['name'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <h4>Precio Unitario</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloProducto.unitprice" placeholder="Precio Unitario" formControlName="unitprice"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['unitprice'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <h4>Cantidad</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloProducto.quantity" placeholder="Cantidad" formControlName="quantity"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['quantity'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <h4>Usuario</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloProducto.userid" placeholder="Usuario" formControlName="userid"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['userid'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <h4 *ngIf="editing == true">Descripción</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloProducto.description" placeholder="Descripcion" formControlName="description"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['description'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <h4>Categoria</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloProducto.categoryid" placeholder="Categoria" formControlName="categoryid"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['categoryid'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <h4>Precio Venta</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloProducto.priceout" placeholder="Precio Venta"   formControlName="priceout"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['priceout'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-card-actions style="text-align: center;">
+            <button mat-raised-button [disabled]="addressForm.invalid" class="btn btn-info"
+              type="submit">Agregar</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    </div>
+
+  </div>
+</body>
+

@@ -1,8 +1,9 @@
-import { Product } from './../../../interfaces/product';
-import { productService } from './../../../services/inventario.service';
+import { productService } from '../../services/inventario.service';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Product } from '../../interfaces/product';
 
 @Component({
   selector: 'app-agregar-inventario',
@@ -14,16 +15,22 @@ export class AgregarInventarioComponent implements OnInit {
   ModeloProducto: Product= {
     idproduct: '',
     name: '',
-    price: 0,
-    active: '',
-    userid: '',
+    unitprice: 0,
+    quantity: 0,
+    userid: 0,
+    description : '',
+    categoryid:0,
+    priceout: 0
     }
     addressForm = this.fb.group({
       idproduct: [''],
       name: ['', Validators.required],
-      price: ['', Validators.required],
-      active: ['', Validators.required],
+      unitprice: ['', Validators.required],
+      quantity: ['', Validators.required],
       userid: ['', Validators.required],
+      description: ['', Validators.required],
+      categoryid: ['', Validators.required],
+      priceout: ['', Validators.required],
 
     });
     editing: boolean = false;
@@ -62,10 +69,13 @@ export class AgregarInventarioComponent implements OnInit {
       }else{
         const Prod: Product = {
           name: this.addressForm.value.name,
-          price: this.addressForm.value.price,
-          active: this.addressForm.value.active,
+          unitprice: this.addressForm.value.unitprice,
+          quantity: this.addressForm.value.quantity,
           userid: this.addressForm.value.userid,
-          idproduct: undefined,
+          description: this.addressForm.value.description,
+          categoryid: this.addressForm.value.categoryid,
+          priceout: this.addressForm.value.priceout,
+          idproduct: undefined
         }
       this.productService.addProducto(Prod).subscribe();
        this.router.navigate(['/tablaInventario']);

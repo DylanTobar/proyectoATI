@@ -13,6 +13,7 @@ export class productService {
   constructor(private http:HttpClient) { }
 
   url="https://proyecto-final-ati.herokuapp.com/product"
+  urlDev = "http://localhost:3000/product"
 
 
   getProducto(){

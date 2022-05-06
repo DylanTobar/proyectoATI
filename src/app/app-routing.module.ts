@@ -1,11 +1,13 @@
-import { InventarioComponent } from './components/inventario/tablaInventario/tabla-inventario.component';
-import { AgregarInventarioComponent } from './components/inventario/agregarInventario/agregar-inventario/agregar-inventario.component';
+import { InventarioComponent } from './components/vistas/tablaInventario/tabla-inventario.component';
+import { AgregarInventarioComponent } from './components/vistas/agg-editInventario/agregar-inventario.component';
 import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalComponent } from './principal/principal.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { LogginComponent } from './components/loggin/loggin.component';
+import { EgresoComponent } from './components/vistas/agg-editEgreso/egreso.component';
+import { TablaEgresoComponent } from './components/vistas/tablaEgreso/tabla-egreso.component';
 
 const routes: Routes = [
   {path:'principal', component: PrincipalComponent, canActivate:[AuthGuard]},
@@ -14,6 +16,10 @@ const routes: Routes = [
   {path:'tablaInventario', component: InventarioComponent},
   {path:'agregarInventario', component: AgregarInventarioComponent},
   {path:'edit/:idproduct', component: AgregarInventarioComponent},
+
+  {path:'tablaEgreso', component: TablaEgresoComponent},
+  {path:'agregarEgreso', component: EgresoComponent},
+  {path:'edit/:idegreso', component: EgresoComponent},
 
 ];
 

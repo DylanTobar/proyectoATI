@@ -1,7 +1,10 @@
 export interface Product{
   idproduct: any;
   name: string;
-  price: number;
-  active: string;
-  userid: string;
+  unitprice: number;
+  quantity: number;
+  userid: number;
+  description: string;
+  categoryid: number;
+  priceout: number;
 }

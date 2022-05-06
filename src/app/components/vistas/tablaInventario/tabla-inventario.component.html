@@ -12,8 +12,12 @@
             <thead>
               <tr class=" text-center">
                 <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Estado</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Precio Venta</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Eliminar</th>
               </tr>
@@ -21,8 +25,12 @@
             <tbody>
               <tr *ngFor="let modelo of ListarProductos" class=" text-center">
                 <td>{{modelo.name}}</td>
-                <td>{{modelo.price}}</td>
-                <td>{{modelo.active}}</td>
+                <td>{{modelo.unitprice}}</td>
+                <td>{{modelo.quantity}}</td>
+                <td>{{modelo.userid}}</td>
+                <td>{{modelo.description}}</td>
+                <td>{{modelo.categoryid}}</td>
+                <td>{{modelo.priceout}}</td>
                 <td class="puntero" (click)="modificarProducto(modelo.idproduct)" style="color:rgb(142, 191, 247)"
                 matTooltip="Editar Producto">
                 <mat-icon>edit</mat-icon>

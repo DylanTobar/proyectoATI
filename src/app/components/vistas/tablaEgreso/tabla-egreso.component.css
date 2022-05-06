@@ -20,11 +20,10 @@
 ::ng-deep .mat-form-field{ width:400px !important; }
 
 .card {
-  max-width: 450px;
+  max-width: 800px;
   margin: auto;
-  text-align: left;
+  text-align: center;
 }
-
 
 .fondo{
   background-color:rgb(235, 237, 238);
