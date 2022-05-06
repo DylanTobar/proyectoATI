@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class RegisterUserService {
+export class UserService {
 
   URL = "https://proyecto-final-ati.herokuapp.com";
   constructor(private http : HttpClient) { }

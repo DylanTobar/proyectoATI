@@ -24,7 +24,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NavComponent } from './nav/nav.component';
-import { RegisterUserComponent } from './components/register-user/register-user.component';
+import { RegisterUserComponent } from './components/register/register-user/register-user.component';
+import { UserComponent } from './components/register/user/user.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { RegisterUserComponent } from './components/register-user/register-user.
     PrincipalComponent,
     NavComponent,
     RegisterUserComponent,
+    UserComponent,
 
   ],
   imports: [

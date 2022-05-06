@@ -24,7 +24,7 @@ export class LogginComponent {
 
   addressForm = this.fb.group({
 
-    userName: [null, Validators.required],
+    email: [null, Validators.required],
     password: [null, Validators.required],
 
   });
@@ -39,7 +39,7 @@ export class LogginComponent {
       (res) =>{
         localStorage.setItem('token', res.token);
         this.rol = this.getRol(res.token);
-        this._router.navigate(['principal']);
+        //this._router.navigate(['principal']);
       }
     )
   }
