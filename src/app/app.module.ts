@@ -24,7 +24,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NavComponent } from './nav/nav.component';
-
+import { InventarioComponent } from './components/inventario/tablaInventario/tabla-inventario.component';
+import { AgregarInventarioComponent } from './components/inventario/agregarInventario/agregar-inventario/agregar-inventario.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import { NavComponent } from './nav/nav.component';
     LogginComponent,
     PrincipalComponent,
     NavComponent,
+    InventarioComponent,
+    AgregarInventarioComponent,
 
   ],
   imports: [
