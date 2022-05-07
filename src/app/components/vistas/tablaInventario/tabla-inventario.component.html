@@ -1,0 +1,50 @@
+<div class="fondo">
+  <div class="container ">
+    <div class="row ">
+      <div class="col order-first mt-3 mb-5">
+        <mat-card class="card">
+          <h1 class=" text-center">Inventario</h1>
+          <button type="button" class="btn agg btn-info" (click)="OnnuevoProducto()">Agregar Producto</button>
+          <rec class=" rec btn " (click)="actualizar()" style="color :rgba(187, 76, 76, 0.952)" matTooltip="Refrescar Tabla">
+            <mat-icon>refresh</mat-icon>
+          </rec>
+          <table class="table">
+            <thead>
+              <tr class=" text-center">
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Precio Venta</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let modelo of ListarProductos" class=" text-center">
+                <td>{{modelo.name}}</td>
+                <td>{{modelo.unitprice}}</td>
+                <td>{{modelo.quantity}}</td>
+                <td>{{modelo.userid}}</td>
+                <td>{{modelo.description}}</td>
+                <td>{{modelo.categoryid}}</td>
+                <td>{{modelo.priceout}}</td>
+                <td class="puntero" (click)="modificarProducto(modelo.idproduct)" style="color:rgb(142, 191, 247)"
+                matTooltip="Editar Producto">
+                <mat-icon>edit</mat-icon>
+              </td>
+
+              <td class="puntero" (click)="eliminarProducto(modelo.idproduct)" style="color :rgba(187, 76, 76, 0.952)"
+                matTooltip="Eliminar Producto">
+                <mat-icon>delete</mat-icon>
+              </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

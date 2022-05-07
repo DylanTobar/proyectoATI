@@ -1,0 +1,46 @@
+<div class="fondo">
+  <div class="container ">
+    <div class="row ">
+      <div class="col order-first mt-3 mb-5">
+        <mat-card class="card">
+          <h1 class=" text-center">Egresos</h1>
+          <button type="button" class="btn agg btn-info" (click)="OnnuevoEgreso()">Agregar Egreso</button>
+          <rec class=" rec btn " (click)="actualizar()" style="color :rgba(187, 76, 76, 0.952)" matTooltip="Refrescar Tabla">
+            <mat-icon>refresh</mat-icon>
+          </rec>
+          <table class="table">
+            <thead>
+              <tr class=" text-center">
+                <th scope="col">ID Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Usuario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let modelo of ListarEgresos" class=" text-center">
+                <td>{{modelo.idegresos}}</td>
+                <td>{{modelo.idproduct}}</td>
+                <td>{{modelo.cant}}</td>
+                <td>{{modelo.type}}</td>
+                <td>{{modelo.date}}</td>
+                <td>{{modelo.iduser}}</td>
+                <td class="puntero" (click)="modificarEgreso(modelo.idegresos)" style="color:rgb(142, 191, 247)"
+                matTooltip="Editar Producto">
+                <mat-icon>edit</mat-icon>
+              </td>
+
+              <td class="puntero" (click)="eliminarEgreso(modelo.idegresos)" style="color :rgba(187, 76, 76, 0.952)"
+                matTooltip="Eliminar Producto">
+                <mat-icon>delete</mat-icon>
+              </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+

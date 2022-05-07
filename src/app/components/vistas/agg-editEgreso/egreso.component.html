@@ -1,0 +1,63 @@
+<body class="body">
+  <div class="container">
+    <div class="row">
+      <form [formGroup]="addressForm" novalidate (ngSubmit)="agregarEgreso()">
+        <mat-card class="card">
+          <h1 class=" text-center" *ngIf="editing == false">Agregar Egreso</h1>
+          <h1 class=" text-center" *ngIf="editing == true">Editar Egreso</h1>
+
+          <h4>ID Producto</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloEgreso.idproduct" placeholder="ID Producto" formControlName="idproduct"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['idproduct'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <h4>Cantidad</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloEgreso.cant" placeholder="Cantidad" formControlName="cant"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['cant'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <h4>Tipo</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloEgreso.type" placeholder="Tipo" formControlName="type"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['type'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <h4>Fecha</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloEgreso.date" placeholder="Fecha" formControlName="date"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['date'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <h4>Usuario</h4>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloEgreso.iduser" placeholder="Usuario" formControlName="iduser"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['iduser'].hasError('required')">
+              <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-card-actions style="text-align: center;">
+            <button mat-raised-button [disabled]="addressForm.invalid" class="btn btn-info"
+              type="submit">Agregar</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    </div>
+
+  </div>
+</body>

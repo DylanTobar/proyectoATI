@@ -24,6 +24,12 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NavComponent } from './nav/nav.component';
+
+import { InventarioComponent } from './components/vistas/tablaInventario/tabla-inventario.component';
+import { EgresoComponent } from './components/vistas/agg-editEgreso/egreso.component';
+import { TablaEgresoComponent } from './components/vistas/tablaEgreso/tabla-egreso.component';
+import { AgregarInventarioComponent } from './components/vistas/agg-editInventario/agregar-inventario.component';
+
 import { RegisterUserComponent } from './components/register/register-user/register-user.component';
 import { UserComponent } from './components/register/user/user.component';
 
@@ -34,8 +40,15 @@ import { UserComponent } from './components/register/user/user.component';
     LogginComponent,
     PrincipalComponent,
     NavComponent,
+
+    InventarioComponent,
+    AgregarInventarioComponent,
+    EgresoComponent,
+    TablaEgresoComponent
+
     RegisterUserComponent,
     UserComponent,
+
 
   ],
   imports: [
