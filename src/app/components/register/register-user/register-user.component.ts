@@ -54,7 +54,6 @@ export class RegisterUserComponent {
   grabar_localstorage() {
     let person =  this.form.value.personid
 
-
 ;
   }
 

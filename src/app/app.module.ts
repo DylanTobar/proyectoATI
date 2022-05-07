@@ -44,7 +44,7 @@ import { UserComponent } from './components/register/user/user.component';
     InventarioComponent,
     AgregarInventarioComponent,
     EgresoComponent,
-    TablaEgresoComponent
+    TablaEgresoComponent,
 
     RegisterUserComponent,
     UserComponent,
