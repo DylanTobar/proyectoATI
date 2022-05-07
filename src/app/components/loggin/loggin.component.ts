@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Usuario } from '../interfaces/usuario';
+import { User } from '../interfaces/usuario';
 import { SecurityService } from '../services/security.service';
 
 export interface log{
@@ -16,15 +16,15 @@ export interface log{
 })
 export class LogginComponent {
 
-  _usuario: Usuario = {
-    userName: '',
+  _usuario: User = {
+    email: '',
     password: '',
     rol:""
   };
 
   addressForm = this.fb.group({
 
-    userName: [null, Validators.required],
+    email: [null, Validators.required],
     password: [null, Validators.required],
 
   });
@@ -39,7 +39,7 @@ export class LogginComponent {
       (res) =>{
         localStorage.setItem('token', res.token);
         this.rol = this.getRol(res.token);
-        this._router.navigate(['principalAdmin']);
+        //this._router.navigate(['principal']);
       }
     )
   }
