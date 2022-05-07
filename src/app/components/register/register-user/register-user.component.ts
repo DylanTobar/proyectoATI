@@ -16,11 +16,12 @@ export class RegisterUserComponent {
     personid:"",
     name:'',
     lastname:'',
+    dpi:'',
 
   };
 
   addressForm = this.fb.group({
-
+    dpi: [null, Validators.required],
     name: [null, Validators.required],
     lastname: [null, Validators.required],
 
@@ -35,17 +36,18 @@ export class RegisterUserComponent {
   }
   form: FormGroup;
 
+
   crearUsuario() {
 
       const _user: Register1 = {
-
+        dpi: this.addressForm.value.dpi,
         name: this.addressForm.value.name,
         lastname: this.addressForm.value.lastname,
         personid: undefined,
 
       }
       this._userRegister.register(_user);
-      localStorage.setItem("persona", JSON.stringify (_user))
+      localStorage.setItem("dpi", JSON.stringify (this.addressForm.value.dpi))
       this._router.navigate(['user']);
 
   }

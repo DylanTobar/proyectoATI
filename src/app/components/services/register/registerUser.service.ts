@@ -14,6 +14,13 @@ export class RegisterUserService {
       res => console.log(res)
     )
   }
+  restore(dpi: any){
+    this.http.get(this.URL+'/persondpi/', dpi).subscribe(
+      res => console.log(res)
+
+    )
+    return this.restore
+  }
 
 
 }
