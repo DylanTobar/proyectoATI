@@ -15,7 +15,7 @@ import { UserComponent } from './components/register/user/user.component';
 
 const routes: Routes = [
   {path:'principal', component: PrincipalComponent, canActivate:[AuthGuard]},
-  {path:'loggin', component: LogginComponent, canActivate:[AuthGuard]},
+  {path:'loggin', component: LogginComponent,},
   {path:'register', component: RegisterUserComponent, canActivate:[AuthGuard]},
   {path:'user', component: UserComponent, canActivate:[AuthGuard]},
 
