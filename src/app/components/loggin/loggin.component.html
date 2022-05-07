@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row">
     <form [formGroup]="addressForm" novalidate (ngSubmit)="onLogin()">
-      <mat-card class="mat_card">
+      <mat-card class="card">
         <mat-card-content>
           <h2>Log In</h2>
-          <p>Para acceder a las vistas de administrador debes de iniciar sesión</p>
+
           <div class="row">
             <div class="col">
               <mat-form-field class="mat-form-field" appearance="fill">
@@ -31,7 +31,7 @@
           </div>
 
         </mat-card-content>
-        <mat-card-actions>
+        <mat-card-actions class="btn">
           <button mat-raised-button color="primary" [disabled]="addressForm.invalid" type="submit">Iniciar
             Sesión</button>
         </mat-card-actions>
